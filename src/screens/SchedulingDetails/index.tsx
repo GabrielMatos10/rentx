@@ -117,7 +117,7 @@ export function SchedulingDetails() {
 				<BackButton onPress={handleBack} />
 			</Header>
 			<CarImages>
-				<ImageSlider imagesUrl={car.photos} />
+				<ImageSlider imageUrl={car.photos} />
 			</CarImages>
 
 			<Content>
