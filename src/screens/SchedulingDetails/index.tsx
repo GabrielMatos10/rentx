@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Alert } from "react-native";
 import { api } from "../../services/api";
 import { useTheme } from "styled-components";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { Feather } from "@expo/vector-icons";
 import { Acessory } from "../../components/Acessory";
 import { BackButton } from "../../components/BackButton";
@@ -103,9 +103,9 @@ export function SchedulingDetails() {
 
 	useEffect(() => {
 		setRentalPeriod({
-			start: format(getPlatformDate(new Date(dates[0])), "dd/MM/yyyy"),
+			start: format(getPlatformDate(parseISO(dates[0])), "dd/MM/yyyy"),
 			end: format(
-				getPlatformDate(new Date(dates[dates.length - 1])),
+				getPlatformDate(parseISO(dates[dates.length - 1])),
 				"dd/MM/yyyy"
 			),
 		});

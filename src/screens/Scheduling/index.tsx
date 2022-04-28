@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar} from "react-native";
 import { useTheme } from "styled-components";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { BackButton } from "../../components/BackButton";
 import { Button } from "../../components/Button";
 import { Calendar, DayProps, MarkedDateProps } from "../../components/Calendar";
@@ -76,10 +76,10 @@ export function Scheduling() {
 		const endDate = Object.keys(interval)[Object.keys(interval).length - 1];
 		setRentalPeriod({
 			startFormatted: format(
-				getPlatformDate(new Date(firstDate)),
+				getPlatformDate(parseISO(firstDate)),
 				"dd/MM/yyyy"
 			),
-			endFormatted: format(getPlatformDate(new Date(endDate)), "dd/MM/yyyy"),
+			endFormatted: format(getPlatformDate(parseISO(endDate)), "dd/MM/yyyy"),
 		});
 	}
 
