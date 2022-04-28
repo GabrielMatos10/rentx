@@ -22,7 +22,7 @@ export const Header = styled.View`
    justify-content: center;
    padding: 25px;
 
-   padding-top: ${getStatusBarHeight() + 30}px;
+   padding-top: ${getStatusBarHeight() + 50}px;
 `
 export const Title = styled.Text`
    color:  ${({theme}) => theme.colors.shape};

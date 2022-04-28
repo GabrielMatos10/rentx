@@ -49,6 +49,10 @@ export function CarDetails() {
 
 	const theme = useTheme()
 
+	function handleBack() {
+		navigation.goBack();
+	}
+
 	const scrollY = useSharedValue(0);
 	const scrollHandler = useAnimatedScrollHandler((event) => {
 		scrollY.value = event.contentOffset.y;
@@ -80,9 +84,7 @@ export function CarDetails() {
 		navigation.navigate("Scheduling", { car });
 	}
 
-	function handleBack() {
-		navigation.goBack();
-	}
+
 
 	return (
 		<Container>
@@ -99,10 +101,10 @@ export function CarDetails() {
 				{backgroundColor: theme.colors.background_secondary}
 			]}
 			>
+				<Animated.View style={sliderCarsStyleAnimation}>
 				<Header>
 					<BackButton onPress={handleBack} />
 				</Header>
-				<Animated.View style={sliderCarsStyleAnimation}>
 					<CarImages>
 						<ImageSlider 
 							imageUrl={car.photos} 
@@ -142,10 +144,6 @@ export function CarDetails() {
 				</Accessories>
 
 				<About>
-					{car.about}
-					{car.about}
-					{car.about}
-					{car.about}
 					{car.about}
 				</About>
 			</Animated.ScrollView>

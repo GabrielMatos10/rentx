@@ -76,7 +76,7 @@ export function Scheduling() {
 		const endDate = Object.keys(interval)[Object.keys(interval).length - 1];
 		setRentalPeriod({
 			startFormatted: format(
-				getPlatformDate(parseISO(firstDate)),
+				getPlatformDate(new Date(firstDate)),
 				"dd/MM/yyyy"
 			),
 			endFormatted: format(getPlatformDate(parseISO(endDate)), "dd/MM/yyyy"),
